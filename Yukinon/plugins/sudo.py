@@ -8,6 +8,7 @@ from Yukinon.mongo.notesdb import Notes
 from Yukinon.mongo.rulesdb import Rules
 from Yukinon.mongo.usersdb import *
 from Yukinon.mongo.chatsdb import *
+from config import OWNER_ID
 from pyrogram import __version__ as pyrover
 import asyncio
 import time
@@ -18,13 +19,9 @@ import time
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
 
 
-@app.on_message(command("الاحصائيات","احصائيات"),"")
+@app.on_message(command(["بوت","البوت"]) & filters.user(OWNER_ID) & ~filters.edited
+)
 async def gstats(_, message):
-    response = await message.reply(""
-    )
-    notesdb = Notes()
-    rulesdb = Rules
-    fldb = Filters()
     served_chats = len(await get_served_chats())
     served_chats = []
     chats = await get_served_chats()
@@ -34,19 +31,12 @@ async def gstats(_, message):
     served_users = []
     users = await get_served_users()
     for user in users:
-        served_users.append(int(user["bot_users"]))   
-    ram = (str(round(psutil.virtual_memory().total / (1024.0 ** 3))) + " GB")
-    supun = dbn.command("dbstats")
-    datasiz = supun["dataSize"] / 1024
-    datasiz = str(datasiz)
-    storag = supun["storageSize"] / 1024
-    smex = f"""
+        served_users.append(int(user["bot_users"]))
+   await message.reply_text(f"
 الاحصائيات 🦅
 🦅 عدد الجروبات » {len(served_chats)}
 🦅 عدد المشتركين » {len(served_users)}
-    """
-    await response.edit_text(smex)
-    return
+")
 
 
 
