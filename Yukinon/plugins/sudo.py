@@ -32,11 +32,13 @@ async def gstats(_, message):
     users = await get_served_users()
     for user in users:
         served_users.append(int(user["bot_users"]))
-   await message.reply_text(f"
+    smex = f"""
 الاحصائيات 🦅
 🦅 عدد الجروبات » {len(served_chats)}
 🦅 عدد المشتركين » {len(served_users)}
-")
+    """
+    await message.reply_text(smex)
+    return
 
 
 
