@@ -23,10 +23,10 @@ from button import *
 async def sendasbot(client, message: Message, _):
     chat_id = message.chat.id   
     if not message.reply_to_message and len(message.command) < 2:
-        return await message.reply_text(_["admin1"])
+        return await message.reply_text(_[""])
     if message.reply_to_message:
         if len(message.command) > 1:
-            send = message.reply_text.split(None, 1)[1]
+            send = message.text.split(None, 1)[1]
             reply_id = message.reply_to_message.message_id
             return await app.send_message(chat_id, 
                          text = send, 
