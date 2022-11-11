@@ -16,8 +16,8 @@ from Yukinon.core.git import git
 git()
 os.system("git pull")
 
-UPDATES_CHANNEL = "https://t.me/TechZBots"
-SUPPORT_GROUP = "https://t.me/TechZBots_Support"
+UPDATES_CHANNEL = "https://t.me/FA9SH"
+SUPPORT_GROUP = "https://t.me/S150D"
 
 SUDOERS = SUDO_USERS_ID
 LOG_GROUP_ID = LOG_GROUP_ID
