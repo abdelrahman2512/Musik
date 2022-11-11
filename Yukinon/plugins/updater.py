@@ -4,7 +4,7 @@ from Yukinon.utils.commands import command
 import os
 
 
-@app.on_message(command("تحديث السورس"))
+@app.on_message(command("تحديث السورس"),"")
 async def _updater(_,message):
   await message.reply_text("Updating...")
   os.system("pkill -9 python3 && bash start")
