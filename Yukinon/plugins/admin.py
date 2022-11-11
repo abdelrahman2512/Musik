@@ -18,7 +18,7 @@ from pyrogram.errors import FloodWait,UserAdminInvalid
 from Yukinon.plugins.fsub import ForceSub
 from button import *
 
-@app.on_message(command("send") & admin_filter)
+@app.on_message(command("قول") & admin_filter)
 @language
 async def sendasbot(client, message: Message, _):
     await message.delete()
