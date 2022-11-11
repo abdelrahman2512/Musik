@@ -53,11 +53,11 @@ async def start_bot():
             await app.edit_message_text(
                 restart_data["chat_id"],
                 restart_data["message_id"],
-                "**Restarted Successfully**",
+                "🦅 تمت اعاده تشغيل البوت بنجاح\n√",
             )
 
         else:
-            await app.send_message(LOG_GROUP_ID, "Yukinon Robot started!")
+            await app.send_message(LOG_GROUP_ID, "🦅 تم تشغيل البوت بنجاح\n")
     except Exception as e:
         print(e)
     #print(f"{all_module}")
@@ -65,7 +65,7 @@ async def start_bot():
  _____________________________________________   
 |                                             |  
 |          Deployed Successfully              |  
-|      (C) 2021-2022 by @TechZBots            |
+|      (C) 2022-2023 by @FA9SH           |
 |_____________________________________________|  
                                                                                                
     """)
@@ -81,33 +81,23 @@ async def start_bot():
 home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(
-                text=" ➕ Add Me To Your Group ➕ ",
-                url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
-            )
-        ],
-        [
            InlineKeyboardButton(
-                text=" ℹ️ About", callback_data="_about"
+                text="الاوامر 📚", callback_data="bot_commands"
             ),
             InlineKeyboardButton(
-                text="🌍 languages ", callback_data="_langs"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="📮 How To Use Me", callback_data="bot_commands"
+                text="ℹ️ حول", callback_data="_about"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="🌐 My Website",
-                url=f"https://szrosebot.ml",
+                text="تغير اللغه 🌐", callback_data="_langs"
             ),
+        ],
+        [
             InlineKeyboardButton(
-                text="🔰News Channel",
-                url=f"https://t.me/szroseupdates",
-            )
+                text="ضيــف البـوت لمجمـوعتـك ✅",
+                url=f"url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
+            ),
         ],
     ]
 )
