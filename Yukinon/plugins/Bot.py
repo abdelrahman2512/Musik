@@ -4,7 +4,8 @@ from pyrogram import Client
 from Yukinon import app
 from config import OWNER_ID
 from Yukinon.utils.caching import ADMIN_CACHE, TEMP_ADMIN_CACHE_BLOCK, admin_cache_reload
-from Yukinon.utils.custom_filters import restrict_filter
+from Yukinon.utils.custom_filters import *
+from pyrogram import filters
 from Yukinon.utils.commands import *
 
 BANNED_USERS = filters.user()
@@ -23,6 +24,6 @@ async def bot(client: Client, message: Message):
 async def bot(client: Client, message: Message):
    await message.reply_text(f"◍ اسمى شادو ياحب 🙄❤️\n√")
 
-@app.on_message(command(["بوت","البوت"]) & admin_cache_reload)
+@app.on_message(command(["بوت","البوت"]) & admin_filter)
 async def bot(client: Client, message: Message):
    await message.reply_text(f"◍ نعم حبيبى الادمن 🥺❤️\n√")
