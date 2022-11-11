@@ -38,7 +38,7 @@ async def sendasbot(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(["رفع مشرف", "رفع مشرف كامل"])
+    filters.command(["promote","fullpromote"])
     & ~filters.edited
     & ~filters.private
     & promote_filter
@@ -60,7 +60,7 @@ async def promoteFunc(_, message: Message):
     if not bot.can_promote_members:
         await message.reply_text("I don't have enough permissions.")
         return
-    if message.command[0][0] == "ك":
+    if message.command[0][0] == "f":
         await message.chat.promote_member(
             user_id=user_id,
             can_change_info=bot.can_change_info,
@@ -111,7 +111,7 @@ async def promoteFunc(_, message: Message):
 
 
 
-@app.on_message(filters.command("demote") & ~filters.edited & ~filters.private & promote_filter)
+@app.on_message(command("تنزيل مشرف") & ~filters.edited & ~filters.private & promote_filter)
 async def demote(_, message: Message):
     FSub = await ForceSub(app, message)
     if FSub == 400:
@@ -163,7 +163,7 @@ async def ban_deleted_accounts(client, message: Message, _):
         await m.edit(_["admin6"])
 
 
-@app.on_message(command("setgrouptitle") & can_change_filter)
+@app.on_message(command("ضع اسم") & can_change_filter)
 @language
 async def set_chat_title(client, message: Message, _):
     FSub = await ForceSub(app, message)
@@ -180,7 +180,7 @@ async def set_chat_title(client, message: Message, _):
 
     await message.reply_text(_["admin24"].format(old_title,new_title))
 
-@app.on_message(command("settitle") & can_change_filter)
+@app.on_message(command("وضع لقب") & can_change_filter)
 @language
 async def set_user_title(client, message: Message, _):
     FSub = await ForceSub(app, message)
@@ -206,7 +206,7 @@ async def set_user_title(client, message: Message, _):
     await message.reply_text(_["admin28"].format(from_user.mention,title))
 
 
-@app.on_message(command("setgrouppic") & can_change_filter)
+@app.on_message(command("وضع صوره") & can_change_filter)
 @language
 async def set_chat_photo(client, message: Message, _):
     FSub = await ForceSub(app, message)
@@ -316,7 +316,7 @@ async def zombie_clean(_, message: Message):
     )
 
 
-@app.on_message(filters.group & filters.regex(pattern="/reload"))
+@app.on_message(filters.group & filters.regex(pattern="تحديث"))
 async def reload_admins(_, message: Message):
     FSub = await ForceSub(app, message)
     if FSub == 400:
