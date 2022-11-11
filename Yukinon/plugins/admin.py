@@ -139,7 +139,7 @@ async def demote(_, message: Message):
 
 
 
-@app.on_message(command("حظر المحذوفين", "طرد المحذوفين") & restrict_filter)
+@app.on_message(command("حظر المحذوفين","طرد المحذوفين") & restrict_filter)
 @language
 async def ban_deleted_accounts(client, message: Message, _):
     FSub = await ForceSub(app, message)
@@ -234,7 +234,7 @@ async def set_chat_photo(client, message: Message, _):
     os.remove(photo)
     
 
-@app.on_message(command("المشرفين", "الادمنيه"))
+@app.on_message(command("المشرفين","الادمنيه"))
 async def adminlist_show(_, m: Message):
     FSub = await ForceSub(app, m)
     if FSub == 400:
