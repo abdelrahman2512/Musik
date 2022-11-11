@@ -20,6 +20,8 @@ from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait,
 
 @app.on_message(command("الاحصائيات","احصائيات"),"")
 async def gstats(_, message):
+    response = await message.reply(""
+    )
     notesdb = Notes()
     rulesdb = Rules
     fldb = Filters()
