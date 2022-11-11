@@ -17,11 +17,6 @@
             "description": "Telegram bot token get it from  @BotFather",
             "required": true
         },
-        "ARQ_API_URL": {
-            "description": "Don't change this value",
-            "value": "https://arq.hamker.in",
-            "required": true
-        },
         "OWNER_ID": {
             "description": "User ID Of The Owner Of Bot",
             "required": true
