@@ -27,7 +27,7 @@ def install_req(cmd: str) -> Tuple[str, str, int, int]:
 
 
 def git():
-    UPSTREAM_REPO = "https://github.com/TechShreyash/Yukinon_Robot"
+    UPSTREAM_REPO = "https://github.com/ttqqk/S"
     UPSTREAM_BRANCH = "main"
     REPO_LINK = UPSTREAM_REPO
     UPSTREAM_REPO = UPSTREAM_REPO
