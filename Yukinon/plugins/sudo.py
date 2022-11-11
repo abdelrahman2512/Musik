@@ -18,10 +18,8 @@ import time
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
 
 
-@app.on_message(command("الاحصائيات","احصائيات"))
+@app.on_message(command("الاحصائيات","احصائيات"),"")
 async def gstats(_, message):
-    response = await message.reply_text(text="Getting Stats!"
-    )
     notesdb = Notes()
     rulesdb = Rules
     fldb = Filters()
@@ -41,7 +39,7 @@ async def gstats(_, message):
     datasiz = str(datasiz)
     storag = supun["storageSize"] / 1024
     smex = f"""
-الاحصائيات ✸
+الاحصائيات 🦅
 🦅 عدد الجروبات » {len(served_chats)}
 🦅 عدد المشتركين » {len(served_users)}
     """
