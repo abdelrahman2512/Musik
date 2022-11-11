@@ -7,7 +7,7 @@ from Yukinon.utils.lang import *
 from button import *
 
 
-@app.on_message(command(["رمزيات ولاد", "رمزيات شباب]))
+@app.on_message(command(["رمزيات ولاد", "رمزيات شباب"]))
 async def shadow(client: Client, message: Message):
     await message.reply_photo(
         photo=IMG,
