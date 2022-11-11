@@ -21,7 +21,6 @@ from button import *
 @app.on_message(command("قول") & admin_filter)
 @language
 async def sendasbot(client, message: Message, _):
-    await message.delete()
     chat_id = message.chat.id   
     if not message.reply_to_message and len(message.command) < 2:
         return await message.reply_text(_["admin1"])
