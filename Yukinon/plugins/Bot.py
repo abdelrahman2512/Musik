@@ -10,6 +10,6 @@ from Yukinon.utils.commands import *
  command(["بوت","البوت"]) & filters.user(OWNER_ID)
 )
 async def bot(client: Client, message: Message):
-       await message.reply_text(f"◍ نعم حبيبى المطور 🥺❤️\n√")
-    else:
-       return await message.reply_text(f"◍ اسمى شادو ياحب 🙄❤️\n√")
+   await message.reply_text(f"◍ نعم حبيبى المطور 🥺❤️\n√")
+else:
+   return await message.reply_text(f"◍ اسمى شادو ياحب 🙄❤️\n√")
