@@ -11,5 +11,3 @@ from Yukinon.utils.commands import *
 )
 async def bot(client: Client, message: Message):
    await message.reply_text(f"◍ نعم حبيبى المطور 🥺❤️\n√")
-else:
-   return await message.reply_text(f"◍ اسمى شادو ياحب 🙄❤️\n√")
