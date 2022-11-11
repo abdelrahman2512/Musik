@@ -16,7 +16,7 @@ from Yukinon.utils.lang import *
 from Yukinon.utils.commands import *
 from button import *
 
-@app.on_message(command("tmute") & restrict_filter)
+@app.on_message(command("كتم") & restrict_filter)
 @language
 async def tmute_usr(client, message: Message, _): 
     if len(message.text.split()) == 1 and not message.reply_to_message:
