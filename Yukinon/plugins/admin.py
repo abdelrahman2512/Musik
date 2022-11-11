@@ -139,7 +139,7 @@ async def demote(_, message: Message):
 
 
 
-@app.on_message(command("حظر المحذوفين","طرد المحذوفين") & restrict_filter)
+@app.on_message(command("طرد المحذوفين") & restrict_filter)
 @language
 async def ban_deleted_accounts(client, message: Message, _):
     FSub = await ForceSub(app, message)
