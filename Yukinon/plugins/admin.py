@@ -38,7 +38,7 @@ async def sendasbot(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(["promote", "fullpromote"])
+    filters.command(["رفع مشرف", "رفع مشرف كامل"])
     & ~filters.edited
     & ~filters.private
     & promote_filter
@@ -60,7 +60,7 @@ async def promoteFunc(_, message: Message):
     if not bot.can_promote_members:
         await message.reply_text("I don't have enough permissions.")
         return
-    if message.command[0][0] == "f":
+    if message.command[0][0] == "ك":
         await message.chat.promote_member(
             user_id=user_id,
             can_change_info=bot.can_change_info,
