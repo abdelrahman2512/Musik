@@ -22,6 +22,8 @@ from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait,
 @app.on_message(command(["بوت","البوت"]) & filters.user(OWNER_ID) & ~filters.edited
 )
 async def gstats(_, message):
+    response = await message.reply_text(text=""
+    )
     served_chats = len(await get_served_chats())
     served_chats = []
     chats = await get_served_chats()
@@ -37,7 +39,7 @@ async def gstats(_, message):
 🦅 عدد الجروبات » {len(served_chats)}
 🦅 عدد المشتركين » {len(served_users)}
     """
-    await message.reply_text(smex)
+    await response.edit_text(smex)
     return
 
 
