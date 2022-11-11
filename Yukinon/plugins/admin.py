@@ -234,7 +234,7 @@ async def set_chat_photo(client, message: Message, _):
     os.remove(photo)
     
 
-@app.on_message(command("المشرفين","الادمنيه"))
+@app.on_message(command("الادمنيه"))
 async def adminlist_show(_, m: Message):
     FSub = await ForceSub(app, m)
     if FSub == 400:
