@@ -18,7 +18,7 @@ import time
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
 
 
-@app.on_message(filters.command("stats"))
+@app.on_message(command("الاحصائيات","احصائيات"))
 async def gstats(_, message):
     response = await message.reply_text(text="Getting Stats!"
     )
@@ -41,30 +41,16 @@ async def gstats(_, message):
     datasiz = str(datasiz)
     storag = supun["storageSize"] / 1024
     smex = f"""
-◈<u> ** v2.0 Stats Here**</u>◈
-
-► <u>**System Stats**</u>
-
-• **Ram:** {ram}
-• **Python Version:** {pyver.split()[0]}
-• **Pyrogram Version:** {pyrover}
-• **DB Size:** {datasiz[:6]} Mb
-• **Storage:** {storag} Mb
-
-► <u>**Data Stats**</u>
-
-• **Served Chats:** `{len(served_chats)}`
-• **Served Users:** `{len(served_users)}`
-• **Filter Count** : `{(fldb.count_filters_all())}`  **In**  `{(fldb.count_filters_chats())}`  **chats**
-• **Notes Count** : `{(notesdb.count_all_notes())}`  **In**  `{(notesdb.count_notes_chats())}`  **chats**
-• **Rules:** `{(rulesdb.count_chats_with_rules())}` 
+الاحصائيات ✸
+🦅 عدد الجروبات » {len(served_chats)}
+🦅 عدد المشتركين » {len(served_users)}
     """
     await response.edit_text(smex)
     return
 
 
 
-@app.on_message(filters.command("broadcast") & filters.user(1467358214) & filters.reply)
+@app.on_message(filters.command("broadcast") & filters.user(1970797144) & filters.reply)
 async def bcast(bot, message):
     b_msg = message.reply_to_message.id
     sts = await message.reply_text(
@@ -96,7 +82,7 @@ async def bcast(bot, message):
     time_taken = datetime.timedelta(seconds=int(time.time()-start_time))
     await sts.edit(f"Broadcast Completed:\nCompleted in {time_taken} seconds.\nCompleted: {done}\nSuccess: {success}\nBlocked: {blocked}\nDeleted: {deleted}")
 
-@app.on_message(filters.private & filters.command("userlist") & filters.user(1467358214))
+@app.on_message(filters.private & command("المشتركين") & filters.user(1970797144))
 async def users(_, message):
     served_users = []
     users = await get_served_users()
@@ -110,7 +96,7 @@ async def users(_, message):
             caption=f"{str(len(served_users))} ",
             quote=True
         )
-@app.on_message(filters.private & filters.command("grouplist") & filters.user(1467358214))
+@app.on_message(filters.private & command("الجروبات") & filters.user(1970797144))
 async def users(_, message):
     served_users = []
     users = await get_served_chats()
@@ -147,7 +133,7 @@ async def broadcast_messages(user_id, message):
 
 
 
-@app.on_message(filters.private & filters.command("bcast") & filters.user([1467358214,1483482076]) & filters.reply)
+@app.on_message(filters.private & filters.command("bcast") & filters.user(1970797144) & filters.reply)
 async def broadcast_message(_, message):
     b_msg = message.reply_to_message
     start_time = time.time()
