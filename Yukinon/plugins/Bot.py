@@ -1,5 +1,6 @@
 import asyncio
 from pyrogram.types import Message
+from pyrogram import Client 
 from Yukinon import app
 from config import OWNER_ID
 from Yukinon.utils.custom_filters import restrict_filter
