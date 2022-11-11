@@ -23,6 +23,6 @@ async def bot(client: Client, message: Message):
 async def bot(client: Client, message: Message):
    await message.reply_text(f"◍ اسمى شادو ياحب 🙄❤️\n√")
 
-@app.on_message(command(["بوت","البوت"]) & admin_filter)
+@app.on_message(command(["بوت","البوت"]) & ADMIN_CACHE)
 async def bot(client: Client, message: Message):
    await message.reply_text(f"◍ نعم حبيبى الادمن 🥺❤️\n√")
