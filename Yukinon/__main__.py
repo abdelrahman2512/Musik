@@ -65,7 +65,7 @@ async def start_bot():
  _____________________________________________   
 |                                             |  
 |          Deployed Successfully              |  
-|      (C) 2022-2023 by @FA9SH           |
+|      (C) 2022-2023 by            |
 |_____________________________________________|  
                                                                                                
     """)
@@ -82,20 +82,20 @@ home_keyboard_pm = InlineKeyboardMarkup(
     [
         [
            InlineKeyboardButton(
-                text="الاوامر 📚", callback_data="bot_commands"
+                text="الاوامر", callback_data="bot_commands"
             ),
             InlineKeyboardButton(
-                text="ℹ️ حول", callback_data="_about"
-            ),
-        ],
-        [
-            InlineKeyboardButton(
-                text="تغير اللغه 🌐", callback_data="_langs"
+                text=" حول", callback_data="_about"
             ),
         ],
         [
             InlineKeyboardButton(
-                text="ضيــف البـوت لمجمـوعتـك ✅",
+                text="تغير اللغه ", callback_data="_langs"
+            ),
+        ],
+        [
+            InlineKeyboardButton(
+                text="ضيــف البـوت لمجمـوعتـك ",
                 url=f"http://t.me/{BOT_USERNAME}?startgroup=new",
             ),
         ],
@@ -106,7 +106,7 @@ keyboard = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="🤖 ابدأ محادثه",
+                text=" ابدأ محادثه",
                 url=f"t.me/{BOT_USERNAME}?start",
             )
         ]
@@ -167,7 +167,7 @@ async def start(client, message: Message, _):
         await message.reply_photo(
             photo=f"https://telegra.ph/file/bcec676a7b87918677570.jpg",
             caption=f"""
-ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n🎤╖ أهلآ بك عزيزي أنا بوت شادو\n⚙️╢ وظيفتي حماية المجموعات\n✅╢ لتفعيل البوت عليك اتباع مايلي \n🔘╢ أضِف البوت إلى مجموعتك\n⚡️╢ ارفعهُ » مشرف\n⬆️╜ سيتم ترقيتك مالك في البوت\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n╖ أهلآ بك عزيزي أنا بوت شادو\n╢ وظيفتي حماية المجموعات\n لتفعيل البوت عليك اتباع مايلي \n أضِف البوت إلى مجموعتك\n ارفعهُ » مشرف\n سيتم ترقيتك مالك في البوت\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 """,
             reply_markup=home_keyboard_pm,
         )
@@ -252,7 +252,7 @@ async def startcq(client,CallbackQuery, _):
         served_users.append(int(user["bot_users"]))
     await CallbackQuery.message.edit(
             text=f"""
-ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\n🎤╖ أهلآ بك عزيزي أنا بوت شادو\n⚙️╢ وظيفتي حماية المجموعات\n✅╢ لتفعيل البوت عليك اتباع مايلي \n🔘╢ أضِف البوت إلى مجموعتك\n⚡️╢ ارفعهُ » مشرف\n⬆️╜ سيتم ترقيتك مالك في البوت\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ\nأهلآ بك عزيزي أنا بوت شادو\n╢ وظيفتي حماية المجموعات\n لتفعيل البوت عليك اتباع مايلي \n أضِف البوت إلى مجموعتك\n ارفعهُ » مشرف\n سيتم ترقيتك مالك في البوت\nـــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 """,
             disable_web_page_preview=True,
             reply_markup=home_keyboard_pm)
@@ -303,7 +303,7 @@ async def help_button(client, query, _):
                 "Here is the help for", HELPABLE[module].__MODULE__
             )
             + HELPABLE[module].__HELP__
-            + "\n👨‍💻Dᴇᴠᴇʟᴏᴘᴇʀ : @supunma"
+            + "\n👨‍💻Dᴇᴠᴇʟᴏᴘᴇʀ : @"
         )
         if hasattr(HELPABLE[module], "__helpbtns__"):
                        button = (HELPABLE[module].__helpbtns__) + [[InlineKeyboardButton("« Back", callback_data="bot_commands")]]
